@@ -16,6 +16,7 @@ public class QuestionManager : MonoBehaviour
     private string answer;
     private bool onlyOnce = true;
     private int questsIndex = 0;
+    private string chosenAnswer;
    
     void Start()
     {
@@ -43,8 +44,15 @@ public class QuestionManager : MonoBehaviour
     public void CheckAnswer(Button button)
     {
         string buttonName = button.gameObject.name;
+        
+        chosenAnswer = buttonName;
+
+    }
+
+    public void SendAnswer()
+    {
         feedbackCanvas.SetActive(true);        
-        if (buttonName == answer)
+        if (chosenAnswer == answer)
         {
             
             congratulations.SetActive(true);

@@ -12,11 +12,12 @@ public class QuestionManager : MonoBehaviour
     public GameObject feedbackCanvas;
     public TMP_Text m_TextComponent;
     public TMP_Text option_A, option_B, option_C, option_D, option_E;
+    public Button send_Button;
     public CSVReaderExam csv_questions;
     private string answer;
     private bool onlyOnce = true;
     private int questsIndex = 0;
-    private string chosenAnswer;
+    private string chosenAnswer = "";
    
     void Start()
     {
@@ -46,6 +47,11 @@ public class QuestionManager : MonoBehaviour
         string buttonName = button.gameObject.name;
         
         chosenAnswer = buttonName;
+
+        if (chosenAnswer != "")
+        {
+            send_Button.interactable = true;
+        }
 
     }
 

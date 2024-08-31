@@ -118,5 +118,10 @@ public class QuestionManager : MonoBehaviour
         feedbackCanvas.SetActive(false); 
         congratulations.SetActive(false);
     }
+
+    public void GameOver()
+    {
+        Application.Quit();
+    }
 }
 
